@@ -2,11 +2,37 @@ body {
     display: flex;
     flex-direction: column;
     font-family: Helvetica, Arial, Sans-Serif;
+
+}
+
+img {
+    width: 300px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* top of header */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 368px;
+}
+
+/* header links */
+ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    gap: 5px;
 }
 
 /* contains .logo,.banner,ul */
 .header {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #1F2937;
     color: #F9FAF8;
 }
@@ -27,6 +53,16 @@ body {
 /* contains .slide,.quote,.action */
 .content {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quote {
+    background-color: #E5E7EB;
+    font: 36px light italic #1F2937;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer {
@@ -35,6 +71,9 @@ body {
 }
 
 .sign_up {
+    border-radius: 3px;
+    border: 1px;
+    padding: 4px 12px;
     background-color: #3882F6;
     color: #F9FAF8;
 }
