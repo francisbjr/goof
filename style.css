@@ -1,0 +1,40 @@
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Helvetica, Arial, Sans-Serif;
+}
+
+/* contains .logo,.banner,ul */
+.header {
+    display: flex;
+    background-color: #1F2937;
+    color: #F9FAF8;
+}
+
+.logo {
+    font-size: 24px;
+}
+
+/* contains .description,img */
+.banner {
+    display: flex;
+}
+
+.banner h2 {
+    font-weight: bolder;
+}
+
+/* contains .slide,.quote,.action */
+.content {
+    display: flex;
+}
+
+.footer {
+    display: flex;
+    background-color: #1F2937;
+}
+
+.sign_up {
+    background-color: #3882F6;
+    color: #F9FAF8;
+}
