@@ -2,20 +2,13 @@ body {
     display: flex;
     flex-direction: column;
     font-family: Helvetica, Arial, Sans-Serif;
-
+    padding: 0%;
+    margin: 0%;
 }
 
-img {
-    width: 300px;
-}
+img { width: 300px; }
 
-a {
-    text-decoration: none;
-}
-
-.pageWidth {
-    flex-basis: 700px;
-}
+a { text-decoration: none; }
 
 /* top of header */
 nav {
@@ -41,9 +34,7 @@ ul {
     color: #F9FAF8;
 }
 
-.logo {
-    font-size: 24px;
-}
+.logo { font-size: 24px; }
 
 /* contains .description,img */
 .banner {
@@ -51,11 +42,12 @@ ul {
     margin-bottom: 75px;
     width: 690px;
 }
-
-.banner h2 {
+.banner h1 {
     font-weight: bolder;
     margin: 0;
 }
+
+.description { padding-right: 10px; }
 
 /* contains .slide,.quote,.action */
 .content {
@@ -68,8 +60,8 @@ ul {
     display: flex;
     justify-content: space-evenly;
     width: 690px;
+    margin-bottom: 50px;
 }
-
 .slide div {
     display: flex;
     flex-direction: column;
@@ -78,19 +70,49 @@ ul {
     flex-basis: 50px;
 }
 
+/* ==> this section needs work */
+/* centers quote */
 .quote {
     background-color: #E5E7EB;
     font: 36px light italic #1F2937;
+    margin-bottom: 50px;
+}
+.quote div { 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 700px; 
 }
+
+/* .signature{} */
+/* this section needs work <==*/
+
+.action {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #3882F6;
+    border-radius: 8px;
+    color:#E5E7EB;
+    padding: 0px 40px;
+    margin-bottom: 50px;
+    width: 620px;
+    height: 100px;
+}
+.action h3 { margin: 0; }
+
 
 .footer {
     display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #1F2937;
+    color: #E5E7EB;
+    padding: 20px;
 }
 
+/* sign up button */
 .sign_up {
     border-radius: 3px;
     border: 1px;
@@ -99,6 +121,7 @@ ul {
     color: #F9FAF8;
 }
 
+/* creates rounded divs */
 .roundCorners {
     border-radius: 10px;
     border: 2px solid #3882F6;
