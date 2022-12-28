@@ -51,6 +51,7 @@ ul {
 }
 
 .description { padding-right: 10px; }
+.description button { border: 0; }
 
 /* contains .slide,.quote,.action */
 .content {
@@ -116,7 +117,7 @@ ul {
     height: 100px;
 }
 .action h3 { margin: 0; }
-
+.action button { border: 2px solid white; }
 
 .footer {
     display: flex;
@@ -129,8 +130,7 @@ ul {
 
 /* sign up button */
 .sign_up {
-    border-radius: 3px;
-    border: 1px;
+    border-radius: 5px;
     padding: 4px 12px;
     background-color: #3882F6;
     color: #F9FAF8;
