@@ -1,4 +1,5 @@
-//create 'getComputerChoice' function
+console.log(getComputerChoice());
+
 function getComputerChoice () {
     //create an array with 'rock + paper + scissors'
     let choice = ['rock', 'paper', 'scissors'];
@@ -8,4 +9,17 @@ function getComputerChoice () {
     return choice[random];
 }
 
-console.log(getComputerChoice());
+//create variable for getPlayerChoice input prompt
+
+
+//declare function for game (two parameters)
+    //call getPlayerChoice var.
+    //IF getPlayerChoice equality check w/ getComputerChoice is true
+        //message 'Draw'
+        //refresh browser or exit game
+    END //ELSE IF getPlayerChoice wins (rock > scissors) + (scissors > paper) + (paper > rock)
+        //message 'Winner'
+    END //ELSE getPlayerChoice loses (rock < paper) + (paper < scissors) + (scissors < rock)     
+        //message 'Loser'
+    END       
+END    
