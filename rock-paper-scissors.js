@@ -1,72 +1,88 @@
-
+//randomized computer choice
 function getComputerChoice () {
     //create an array with 'rock + paper + scissors'
     let choice = ['rock', 'paper', 'scissors'];
     //create a variable that will pick a random string out of the array
     let random = Math.floor(Math.random() * choice.length);
-    //return the variable
+    //return the random result
     return choice[random];
 }
-
-let gCC = getComputerChoice();
-console.log(gCC);
-
+//stored value of getComputerChoice func.
+let computerChoice = getComputerChoice();
+//both players start at zero
+let userScore = 0;
+let computerScore = 0;
 //create variable for getPlayerChoice input prompt
-let getPlayerChoice = prompt('Rock, Paper, or Scissor?');
+let playerChoice = prompt('Rock, Paper, or Scissor?').toLowerCase();
 
-console.log(rpsGame(getPlayerChoice,gCC));
-
-//declare function for game (two parameters)
-function rpsGame (playerSelection,computerSelection) {
-    console.log('rpsGame',computerSelection);
+//declare playRound function (two parameters)
+function playRound (playerSelection,computerSelection) {
+    //console.log('rpsGame',computerSelection);
     let result;
-
+    let winner = 'You Win!';
+    let loser = 'You Lose!';
+    let paperWins = 'Paper beats Rock!';
+    let rockWins = 'Rock beats Scissors!';
+    let scissorsWins = 'Scissors beats Paper!';
+    //conditions for playerSelection
     switch (playerSelection) {
         case 'rock':
             if (computerSelection === 'rock')
             {
-                result = 'Draw';
+                result = 'Draw. Try Again.';
             } else if (computerSelection === 'paper')
             {
-                result = 'wins';
+                result = `${loser} ${paperWins}`;
             } else if (computerSelection === 'scissors')
             {
-                result = 'win';
+                result = `${winner} ${rockWins}`;
             } else {
-                result = 'try again';
+                result = 'not an option... Choose rock, paper or scissors.';
             }
             break;
-
         case 'paper':
             if (computerSelection === 'paper')
             {
-                result = 'Draw';
+                result = 'Draw. Try Again.';
             } else if (computerSelection === 'scissors')
             {
-                result = 'lose';
+                result = `${loser} ${scissorsWins}`;
             } else if (computerSelection === 'rock')
             {
-                result = ' win';
+                result = `${winner} ${paperWins}`;
             } else {
-                result = 'try again';
+                result = 'not an option... Choose rock, paper or scissors.';
             }
             break;
-
         case 'scissors':
             if (computerSelection === 'scissors')
             {
-                result = 'Draw';
+                result = 'Draw. Try Again.';
             } else if (computerSelection === 'rock')
             {
-                result = 'lose';
+                result = `${loser} ${rockWins}`;
             } else if (computerSelection === 'paper')
             {
-                result = ' win';
+                result = `${winner} ${scissorsWins}`;
             } else {
-                result = 'try again';
+                result = 'not an option... Choose rock, paper or scissors.';
             }
             break;
     } 
     return result;
 }
+//'GAME OVER' function
+function endGame() {
+    if (userScore > computerScore) {
+        console.log("Game Over! You Win! :)");
+    } else if (computerScore > userScore) {
+        console.log("Game Over! You Lost! :(");
+    }
+}
+//declare game function
+function game () {
+    //call playRound func.
+    console.log(playRound(playerChoice, computerChoice));
+    playRound(playerChoice, computerChoice);
 
+} 
