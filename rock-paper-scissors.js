@@ -7,12 +7,13 @@ function getComputerChoice () {
     //return the random result
     return choice[random];
 }
-//question string
+//strings
 let question = 'Rock, Paper, or Scissor?';
-//stored value of getComputerChoice func.
-let computerChoice;
-//create variable for getPlayerChoice input prompt
-let playerChoice;
+let winner = 'You Win!';
+let loser = 'You Lose!';
+let paperWins = 'Paper beats Rock!';
+let rockWins = 'Rock beats Scissors!';
+let scissorsWins = 'Scissors beats Paper!';
 //both players start at zero
 let userScore = 0;
 let computerScore = 0;
@@ -21,14 +22,7 @@ game();
 
 //declare playRound function (two parameters)
 function playRound (playerSelection,computerSelection) {
-    playerChoice = prompt(question).toLowerCase();
-    computerChoice = getComputerChoice();
     let result;
-    let winner = 'You Win!';
-    let loser = 'You Lose!';
-    let paperWins = 'Paper beats Rock!';
-    let rockWins = 'Rock beats Scissors!';
-    let scissorsWins = 'Scissors beats Paper!';
     //conditions for playerSelection
     switch (playerSelection) {
         case 'rock':
@@ -110,6 +104,9 @@ function endGame () {
 }
 //declare game function
 function game () {
+    //prompt for playerChoice
+    let playerChoice = prompt(question).toLowerCase();
+    let computerChoice = getComputerChoice();
     //call playRound func.
     playRound(playerChoice, computerChoice);
     console.log(playRound(playerChoice,computerChoice));
