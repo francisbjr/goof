@@ -33,14 +33,16 @@ function playRound (playerSelection,computerSelection) {
                 result += `Player: ${userScore} | ${computerScore} CPU`;
             } else if (computerSelection === 'paper')
             {
+                computerScore++;
                 result = `${loser} ${paperWins}`;
                 result += '\n';
-                result += `Player: ${userScore} | ${computerScore++} CPU`;
+                result += `Player: ${userScore} | ${computerScore} CPU`;
             } else if (computerSelection === 'scissors')
             {
+                userScore++;
                 result = `${winner} ${rockWins}`;
                 result += '\n';
-                result += `Player: ${userScore++} | ${computerScore} CPU`;
+                result += `Player: ${userScore} | ${computerScore} CPU`;
             } else {
                 result = 'not an option... Choose rock, paper or scissors.';
                 result += '\n';
@@ -55,14 +57,16 @@ function playRound (playerSelection,computerSelection) {
                 result += `Player: ${userScore} | ${computerScore} CPU`;
             } else if (computerSelection === 'scissors')
             {
+                computerScore++;
                 result = `${loser} ${scissorsWins}`;
                 result += '\n';
-                result += `Player: ${userScore} | ${computerScore++} CPU`;
+                result += `Player: ${userScore} | ${computerScore} CPU`;
             } else if (computerSelection === 'rock')
             {
+                userScore++;
                 result = `${winner} ${paperWins}`;
                 result += '\n';
-                result += `Player: ${userScore++} | ${computerScore} CPU`;
+                result += `Player: ${userScore} | ${computerScore} CPU`;
             } else {
                 result = 'not an option... Choose rock, paper or scissors.';
                 result += '\n';
@@ -77,14 +81,16 @@ function playRound (playerSelection,computerSelection) {
                 result += `Player: ${userScore} | ${computerScore} CPU`;
             } else if (computerSelection === 'rock')
             {
+                computerScore++;
                 result = `${loser} ${rockWins}`;
                 result += '\n';
-                result += `Player: ${userScore} | ${computerScore++} CPU`;
+                result += `Player: ${userScore} | ${computerScore} CPU`;
             } else if (computerSelection === 'paper')
             {
+                userScore++;
                 result = `${winner} ${scissorsWins}`;
                 result += '\n';
-                result += `Player: ${userScore++} | ${computerScore} CPU`;
+                result += `Player: ${userScore} | ${computerScore} CPU`;
             } else {
                 result = 'not an option... Choose rock, paper or scissors.';
                 result += '\n';
@@ -108,7 +114,6 @@ function game () {
     let playerChoice = prompt(question).toLowerCase();
     let computerChoice = getComputerChoice();
     //call playRound func.
-    playRound(playerChoice, computerChoice);
     console.log(playRound(playerChoice,computerChoice));
     //players will continue to play if their scores are lower than 5
     if (userScore < 5 && computerScore < 5) {
