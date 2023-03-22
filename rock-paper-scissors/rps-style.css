@@ -17,12 +17,13 @@ body {
     top: 50%;
     left: 50%;
 }
-button {
+input {
     padding: 0 5px;
     margin: 0;
 }
 .players-choice {
     padding: 0;
+    margin-bottom: 20px;
 }
 .players {
     display: flex;
