@@ -9,4 +9,11 @@ body {
 
 .grid {
     background-color: white;
+    color: aliceblue;
+    width: 80vmin;
+    height: 80vmin;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
 }
