@@ -3,10 +3,17 @@ const grid = document.getElementById('grid')
 //create function called createGrid 
 const createGrid = () => {
     //loop will run 16 times
-    for (let i = 0; i < 16; i++) {
+    for (let i = 0; i < 4; i++) {
         //create a var that makes a child div for 'grid' 
-        let div = document.createElement('div')
-        grid.appendChild(div)
+        let divRow = document.createElement('div')
+        divRow.setAttribute('id', 'divRow')
+        grid.appendChild(divRow)
+        
+        for (let i = 0; i < 4; i++) {
+            let divColumn = document.createElement('div')
+            divColumn.setAttribute('id', 'divColumn')
+            divRow.appendChild(divColumn)
+        }
     }
 
     return
