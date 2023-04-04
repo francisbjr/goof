@@ -12,6 +12,7 @@ const createGrid = () => {
         for (let i = 0; i < 4; i++) {
             let divColumn = document.createElement('div')
             divColumn.setAttribute('id', 'divColumn')
+            divColumn.addEventListener("mouseover", () => divColumn.style.cssText = 'background: red;')
             divRow.appendChild(divColumn)
         }
     }
