@@ -1,3 +1,4 @@
+import random as r
 import tkinter as tk
 from tkinter import Button, Entry, Label, LabelFrame, Text
 
@@ -9,9 +10,9 @@ root.geometry("400x200") # Window Size
 e = Entry(root, )
 e.grid(row=0, column=0)
 
-def insertInt(string):
-    label = Label(e, text=string)
-    label.pack()
+def randomInt():
+    random_number = r.randint(1, 9)
+    return random_number
 
 # Buttons Frame
 btns_frame = LabelFrame(root, )
