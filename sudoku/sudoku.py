@@ -4,7 +4,7 @@ from tkinter import Button, Frame, Label, LabelFrame
 
 root = tk.Tk() # Create root window
 root.title("Sudoku") # Window Title
-root.geometry("400x200") # Window Size
+root.geometry("800x350") # Window Size
 # root.resizable(0, 0)
 
 ########## Functions ##########
@@ -28,23 +28,25 @@ def create_multiple_boxes(num_boxes):
             boxes.append(box)
     return boxes
 
-num_boxes = 9  # Specify the number of boxes you want to create
+# Game Grid
+num_boxes = 1  # Specify the number of boxes you want to create
 boxes = create_multiple_boxes(num_boxes)
 
-# Game Grid
 game_frame = LabelFrame(root, )
-game_frame.grid(row=0, column=0)
+game_frame.grid(row=0, column=0) # Position of game board 
 
     # Print the boxes
 for box in boxes:
     box_frame = Frame(game_frame, bd=1, relief=tk.RAISED)
     box_frame.pack(side=tk.LEFT, padx=10, pady=10)
-    for row in box:
-        row_frame = Frame(box_frame)
-        row_frame.pack()
-        for number in row:
-            label = Label(row_frame, text=number, width=4, height=2, relief=tk.RIDGE)
-            label.pack(side=tk.LEFT)
+    for row in range(3):
+     for row in box:
+         row_frame = Frame(box_frame)
+         row_frame.pack()
+         for col in range(3):
+          for number in row:
+              label = Label(row_frame, text=number, width=4, height=2, relief=tk.RIDGE)
+              label.pack(side=tk.LEFT)
 
 '''
 
@@ -70,7 +72,7 @@ bottom_right_grid .grid(row=2, column=2)
 '''
 # Buttons Frame
 btns_frame = LabelFrame(root, )
-btns_frame.grid(row=1, column=0) # Position for all buttons
+btns_frame.grid(row=0, column=1) # Position for all buttons
 # Buttons (controls padding)
 btn1 = Button(btns_frame, text="1", padx=20 ,pady=15)
 btn2 = Button(btns_frame, text="2", padx=20 ,pady=15)
