@@ -7,12 +7,33 @@ root.title("Sudoku") # Window Title
 root.geometry("400x200") # Window Size
 # root.resizable(0, 0)
 
-e = Entry(root, )
-e.grid(row=0, column=0)
-
 def randomInt():
     random_number = r.randint(1, 9)
     return random_number
+
+# Game Grid
+game_frame = LabelFrame(root, )
+game_frame.grid(row=0, column=0)
+
+top_left_grid = LabelFrame(game_frame, )
+top_center_grid = LabelFrame(game_frame, )
+top_right_grid = LabelFrame(game_frame, )
+middle_left_grid = LabelFrame(game_frame, )
+middle_center_grid = LabelFrame(game_frame, )
+middle_right_grid = LabelFrame(game_frame, )
+bottom_left_grid = LabelFrame(game_frame, )
+bottom_center_grid = LabelFrame(game_frame, )
+bottom_right_grid = LabelFrame(game_frame, )
+
+top_left_grid.grid(row=0, column=0)
+top_center_grid.grid(row=0, column=1)
+top_right_grid.grid(row=0, column=2)
+middle_left_grid.grid(row=1, column=0)
+middle_center_grid.grid(row=1, column=1)
+middle_right_grid.grid(row=1, column=2)
+bottom_left_grid.grid(row=2, column=0)
+bottom_center_grid.grid(row=2, column=1)
+bottom_right_grid .grid(row=2, column=2)
 
 # Buttons Frame
 btns_frame = LabelFrame(root, )
