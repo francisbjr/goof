@@ -1,13 +1,85 @@
 import random
 import math
 import tkinter as tk
-from tkinter import Button, Frame, Label, LabelFrame
+from tkinter import ttk
 
-root = tk.Tk() # Create root window
-root.title("Sudoku") # Window Title
-root.geometry("650x350") # Window Size
-# root.resizable(0, 0)
+LARGE_FONT= ("Verdana", 12)
 
+##### Classes #####
+class windows(tk.Tk):
+
+    def __init__(self, *args, **kwargs):
+        
+        tk.Tk.__init__(self, *args, **kwargs)
+        tk.Tk.wm_title(self, "Sudoku")
+        tk.Tk.geometry(self, "400x400")
+
+        container = tk.Frame(self)
+        container.pack(side="top", fill="both", expand = True)
+        container.grid_rowconfigure(0, weight=1)
+        container.grid_columnconfigure(0, weight=1)
+
+        self.frames = {}
+
+        for F in (HomePage, EasyModePage, HardModePage):
+
+            frame = F(container, self)
+            self.frames[F] = frame
+            frame.grid(row=0, column=0, sticky="nsew")
+
+        self.show_frame(HomePage)
+
+    def show_frame(self, cont):
+
+        frame = self.frames[cont]
+        frame.tkraise()
+
+class HomePage(tk.Frame):
+
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self,parent)
+        
+        label = ttk.Label(self, text="Start Page", font=LARGE_FONT)
+        label.pack(pady=10,padx=10)
+
+        button = ttk.Button(self, text="Easy",
+                            command=lambda: controller.show_frame(EasyModePage))
+        button.pack()
+
+        button2 = ttk.Button(self, text="Hard",
+                            command=lambda: controller.show_frame(HardModePage))
+        button2.pack()
+
+class EasyModePage(tk.Frame):
+
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+        label = ttk.Label(self, text="Easy Mode", font=LARGE_FONT)
+        label.pack(pady=10,padx=10)
+
+        button1 = ttk.Button(self, text="Back to Home",
+                            command=lambda: controller.show_frame(HomePage))
+        button1.pack()
+
+        button2 = ttk.Button(self, text="Hard",
+                            command=lambda: controller.show_frame(HardModePage))
+        button2.pack()
+
+class HardModePage(tk.Frame):
+
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+        label = ttk.Label(self, text="Hard Mode", font=LARGE_FONT)
+        label.pack(pady=10,padx=10)
+
+        button1 = ttk.Button(self, text="Back to Home",
+                            command=lambda: controller.show_frame(HomePage))
+        button1.pack()
+
+        button2 = ttk.Button(self, text="Easy",
+                            command=lambda: controller.show_frame(EasyModePage))
+        button2.pack()
+        
 class Sudoku:
     def __init__(self, N, K):
         self.N = N
@@ -66,7 +138,6 @@ class Sudoku:
             if self.mat[i][j] == num:
                 return False
         return True
-     
     
     def fillRemaining(self, i, j):
         # Check if we have reached the end of the matrix
@@ -102,7 +173,6 @@ class Sudoku:
             if (self.mat[i][j] != 0):
                 count -= 1
                 self.mat[i][j] = 0
-     
         return
  
     def printSudoku(self):
@@ -110,18 +180,15 @@ class Sudoku:
             for j in range(self.N):
                 print(self.mat[i][j], end=" ")
             print()
- 
-# Driver code
-if __name__ == "__main__":
-    N = 9
-    K = 40
-    sudoku = Sudoku(N, K)
-    sudoku.fillValues()
-    sudoku.printSudoku()
 
+##### Functions #####
+def show_frame(self, cont):
+        frame = self.frames[cont]
+        # raises the current frame to the top
+        frame.tkraise()
+'''
 game_frame = LabelFrame(root, )
 game_frame.grid(row=0, column=0) # Position of game board 
-
 
 # Buttons Frame
 btns_frame = LabelFrame(root, )
@@ -146,5 +213,14 @@ btn6.grid(row=1, column=3, padx=2 ,pady=2)
 btn7.grid(row=2, column=1, padx=2 ,pady=2)
 btn8.grid(row=2, column=2, padx=2 ,pady=2)
 btn9.grid(row=2, column=3, padx=2 ,pady=2)
+'''
+# Driver code
+if __name__ == "__main__":
+    N = 9
+    K = 30 # Number of fill in spaces
+    sudoku = Sudoku(N, K)
+    sudoku.fillValues()
+    sudoku.printSudoku()
 
-root.mainloop()
+    root = windows()
+    root.mainloop()
