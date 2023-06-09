@@ -35,49 +35,44 @@ class windows(tk.Tk):
         frame.tkraise()
 
 class HomePage(tk.Frame):
-
     def __init__(self, parent, controller):
         tk.Frame.__init__(self,parent)
         
         label = ttk.Label(self, text="Start Page", font=LARGE_FONT)
         label.pack(pady=10,padx=10)
 
-        button = ttk.Button(self, text="Easy",
-                            command=lambda: controller.show_frame(EasyModePage))
+        canvas = tk.Canvas(self, cursor="cross")   
+        board = canvas.create_rectangle(20,20, 1, 1, outline='red')
+        canvas.pack()
+
+        button = ttk.Button(self, text="Easy", command=lambda: controller.show_frame(EasyModePage))
         button.pack()
 
-        button2 = ttk.Button(self, text="Hard",
-                            command=lambda: controller.show_frame(HardModePage))
+        button2 = ttk.Button(self, text="Hard", command=lambda: controller.show_frame(HardModePage))
         button2.pack()
 
 class EasyModePage(tk.Frame):
-
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
         label = ttk.Label(self, text="Easy Mode", font=LARGE_FONT)
         label.pack(pady=10,padx=10)
 
-        button1 = ttk.Button(self, text="Back to Home",
-                            command=lambda: controller.show_frame(HomePage))
+        button1 = ttk.Button(self, text="Back to Home", command=lambda: controller.show_frame(HomePage))
         button1.pack()
 
-        button2 = ttk.Button(self, text="Hard",
-                            command=lambda: controller.show_frame(HardModePage))
+        button2 = ttk.Button(self, text="Hard", command=lambda: controller.show_frame(HardModePage))
         button2.pack()
 
 class HardModePage(tk.Frame):
-
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
         label = ttk.Label(self, text="Hard Mode", font=LARGE_FONT)
         label.pack(pady=10,padx=10)
 
-        button1 = ttk.Button(self, text="Back to Home",
-                            command=lambda: controller.show_frame(HomePage))
+        button1 = ttk.Button(self, text="Back to Home", command=lambda: controller.show_frame(HomePage))
         button1.pack()
 
-        button2 = ttk.Button(self, text="Easy",
-                            command=lambda: controller.show_frame(EasyModePage))
+        button2 = ttk.Button(self, text="Easy", command=lambda: controller.show_frame(EasyModePage))
         button2.pack()
         
 class Sudoku:
