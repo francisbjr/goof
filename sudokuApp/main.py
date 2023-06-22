@@ -1,8 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 from sudokuGame.sudoku import Sudoku
-
-LARGE_FONT= ("Verdana", 12)
+from sudokuGame.constants import LARGE_FONT
 
 ##### Classes #####
 class windows(tk.Tk):
