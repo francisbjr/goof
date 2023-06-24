@@ -2,11 +2,14 @@ import pygame
 from sudokuGame.sudoku import Sudoku
 from sudokuGame.constants import *
 
+FPS = 60
+
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Sudoku")
 
 def main():
-    run = True 
+    run = True
+    clock = pygame.time.Clock() 
     while run:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
