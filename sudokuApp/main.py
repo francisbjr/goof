@@ -1,8 +1,7 @@
 import pygame
 from sudokuGame.sudoku import Sudoku
-from sudokuGame.constants import LARGE_FONT
+from sudokuGame.constants import *
 
-WIDTH, HEIGHT = 900, 500
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Sudoku")
 
@@ -12,6 +11,9 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
+
+        WIN.fill(WHITE)
+        pygame.display.update()
 
     pygame.quit()
 
