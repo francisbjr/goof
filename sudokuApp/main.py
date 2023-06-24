@@ -2,6 +2,18 @@ import pygame
 from sudokuGame.sudoku import Sudoku
 from sudokuGame.constants import LARGE_FONT
 
+WIDTH, HEIGHT = 900, 500
+WIN = pygame.display.set_mode((WIDTH, HEIGHT))
+
+def main():
+    run = True 
+    while run:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                run = False
+
+    pygame.quit()
+
 # Driver code
 if __name__ == "__main__":
     N = 9
@@ -10,5 +22,4 @@ if __name__ == "__main__":
     sudoku.fillValues()
     sudoku.printSudoku()
 
-    # root = windows()
-    # root.mainloop()
+    main()
