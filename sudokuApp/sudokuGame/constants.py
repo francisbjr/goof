@@ -1,8 +1,12 @@
 # Font
 LARGE_FONT= ("Verdana", 12)
 
-# Color
-WHITE = (255, 255, 255)
-
 # Size
 WIDTH, HEIGHT = 900, 500
+ROWS, COLS = 3, 3
+SQUARE_SIZE = WIDTH//COLS
+
+# Color
+WHITE = (255, 255, 255)
+GRAY = (211, 211, 211)
+BLUE = (173, 216, 230)
