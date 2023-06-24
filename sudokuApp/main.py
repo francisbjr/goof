@@ -4,6 +4,7 @@ from sudokuGame.constants import LARGE_FONT
 
 WIDTH, HEIGHT = 900, 500
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("Sudoku")
 
 def main():
     run = True 
