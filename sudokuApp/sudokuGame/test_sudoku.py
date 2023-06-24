@@ -1,6 +1,5 @@
 import sudoku
 import random
-import pytest
 
 def test_randomInt(monkeypatch):
     random.seed(123)
