@@ -2,13 +2,13 @@ import pygame
 from sudokuGame.sudoku import Sudoku
 from sudokuGame.constants import *
 
-FPS = 60
-
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Sudoku")
 
 def draw_window():
     WIN.fill(WHITE)
+
+
     pygame.display.update()
 
 def main():
