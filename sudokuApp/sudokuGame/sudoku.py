@@ -1,5 +1,7 @@
 import random
 import math
+import pygame
+from .constants import BLUE, GRAY, ROWS, SQUARE_SIZE
 
 class Sudoku:
     def __init__(self, N, K):
@@ -101,3 +103,9 @@ class Sudoku:
             for j in range(self.N):
                 print(self.mat[i][j], end=" ")
             print()
+    
+    def drawGrid(self, win):
+        win.fill(BLUE)
+        for row in range(ROWS):
+            for col in range(row % 2, ROWS, 2):
+                pygame.draw.rect(win, GRAY, (row*SQUARE_SIZE, col*SQUARE_SIZE, SQUARE_SIZE, SQUARE_SIZE))

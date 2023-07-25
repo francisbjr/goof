@@ -2,8 +2,8 @@
 LARGE_FONT= ("Verdana", 12)
 
 # Size
-WIDTH, HEIGHT = 900, 500
-ROWS, COLS = 3, 3
+WIDTH, HEIGHT = 500, 500
+ROWS, COLS = 9, 9
 SQUARE_SIZE = WIDTH//COLS
 
 # Color

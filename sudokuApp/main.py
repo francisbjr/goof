@@ -7,13 +7,13 @@ pygame.display.set_caption("Sudoku")
 
 def draw_window():
     WIN.fill(WHITE)
-
-
+    sudoku.drawGrid(WIN)
     pygame.display.update()
 
 def main():
     run = True
-    clock = pygame.time.Clock() 
+    clock = pygame.time.Clock()
+
     while run:
         clock.tick(FPS)
         for event in pygame.event.get():
